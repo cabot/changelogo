@@ -11,7 +11,7 @@ Simple logo changer for phpBB
 3. In the `ext` directory of your phpBB board, create a new directory named `cabot` (if it does not already exist).
 4. Copy the `changelogo` folder to `/ext/cabot/` (if done correctly, you'll have the main extension class at (your forum root)/ext/cabot/changelogo/composer.json).
 5. Navigate in the ACP to `Customise -> Manage extensions`.
-6. Look for `Footer Icons` under the Disabled Extensions list, and click its `Enable` link.
+6. Look for `Change logo` under the Disabled Extensions list, and click its `Enable` link.
 
 ## Uninstall
 1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
