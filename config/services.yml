@@ -1,0 +1,8 @@
+services:
+    cabot.changelogo.listener:
+        class: cabot\changelogo\event\listener
+        arguments:
+        - '@config'
+        - '@template'
+        tags:
+            - { name: event.listener }

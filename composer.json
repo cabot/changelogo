@@ -1,0 +1,22 @@
+{
+	"name": "cabot/changelogo",
+	"type": "phpbb-extension",
+	"description": "Simple logo changer",
+	"homepage": "https://forum.cabotweb.fr",
+	"version": "1.0.0",
+	"license": "GPL-2.0-only",
+	"authors": [{
+		"name": "cabot",
+		"homepage": "https://forum.cabotweb.fr",
+		"role": "SushiMaker"
+		}],
+	"require": {
+		"php": ">=5.4.7"
+		},
+	"extra": {
+		"display-name": "Change logo",
+		"soft-require": {
+		"phpbb/phpbb": ">=3.2.0"
+		}
+	}
+}

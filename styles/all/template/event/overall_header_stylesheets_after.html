@@ -1,0 +1,16 @@
+{% if CHANGELOGO_URL %}
+{% set logoUrl = CHANGELOGO_URL %}
+{% if logoUrl starts with 'http://' or logoUrl starts with 'https://' %}
+    {% set logoUrl = CHANGELOGO_URL %}
+{% else %}
+    {% set logoUrl = BOARD_URL ~ CHANGELOGO_URL %}
+{% endif %}
+<style>
+    .site_logo {
+        background-image: url("{{ logoUrl }}");
+        width: {{ CHANGELOGO_WIDTH }};
+        height: {{ CHANGELOGO_HEIGHT }};
+        background-size: cover;
+    }
+</style>
+{% endif %}

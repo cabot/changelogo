@@ -1,0 +1,38 @@
+{% INCLUDE 'overall_header.html' %}
+<h1>{{ lang('ACP_CHANGELOGO_HEADING') }}</h1>
+<form id="acp_board" method="post" action="{{ U_ACTION }}">
+	<fieldset>
+		<legend>{{ lang('ACP_GENERAL_CONFIGURATION') }}</legend>
+		<dl>
+			<dt>
+				<label for="changelogo_url">{{ lang('ACP_CHANGELOGO_URL') ~ lang('COLON') }}</label><br>
+				<span>{{ lang('ACP_CHANGELOGO_URL_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input name="changelogo_url" type="text" size="50" value="{{ CHANGELOGO_URL }}">
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="changelogo_width">{{ lang('ACP_CHANGELOGO_WIDTH') ~ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<input name="changelogo_width" type="text" size="20" value="{{ CHANGELOGO_WIDTH }}">
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="changelogo_height">{{ lang('ACP_CHANGELOGO_HEIGHT') ~ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<input name="changelogo_height" type="text" size="20" value="{{ CHANGELOGO_HEIGHT }}">
+			</dd>
+		</dl>
+	</fieldset>
+	<p class="submit-buttons">
+		{{ S_FORM_TOKEN }}
+		<input class="button1" type="submit" name="submit" value="{{ lang('SUBMIT') }}">&nbsp;
+		<input class="button2" type="reset" name="reset" value="{{ lang('RESET') }}">
+	</p>
+</form>
+{% INCLUDE 'overall_footer.html' %}
