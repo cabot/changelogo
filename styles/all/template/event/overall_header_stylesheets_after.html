@@ -1,8 +1,6 @@
 {% if CHANGELOGO_URL %}
 {% set logoUrl = CHANGELOGO_URL %}
-{% if logoUrl starts with 'http://' or logoUrl starts with 'https://' %}
-    {% set logoUrl = CHANGELOGO_URL %}
-{% else %}
+{% if not (logoUrl starts with 'http://' or logoUrl starts with 'https://') %}
     {% set logoUrl = BOARD_URL ~ CHANGELOGO_URL %}
 {% endif %}
 <style>
