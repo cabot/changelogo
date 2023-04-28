@@ -1,7 +1,7 @@
 {% if CHANGELOGO_URL %}
 {% set logoUrl = CHANGELOGO_URL %}
 {% if not (logoUrl starts with 'http://' or logoUrl starts with 'https://') %}
-    {% set logoUrl = BOARD_URL ~ CHANGELOGO_URL %}
+    {% set logoUrl = ROOT_PATH ~ CHANGELOGO_URL %}
 {% endif %}
 <style>
     .site_logo {
