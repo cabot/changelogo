@@ -6,9 +6,9 @@
 <style>
     .site_logo {
         background-image: url("{{ logoUrl }}");
-        width: {{ CHANGELOGO_WIDTH }};
-        height: {{ CHANGELOGO_HEIGHT }};
-        background-size: cover;
+        width: {{ CHANGELOGO_WIDTH }}px;
+        height: {{ CHANGELOGO_HEIGHT }}px;
+        object-fit: contain;
     }
 </style>
 {% endif %}
