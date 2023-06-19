@@ -1,14 +1,16 @@
-{% if CHANGELOGO_URL %}
-{% set logoUrl = CHANGELOGO_URL %}
-{% if not (logoUrl starts with 'http://' or logoUrl starts with 'https://') %}
-    {% set logoUrl = BOARD_URL ~ CHANGELOGO_URL %}
-{% endif %}
+{% if CHANGELOGO_URL || CHANGELOGO_WIDTH || CHANGELOGO_HEIGHT %}
+	{% if CHANGELOGO_URL %}
+		{% set logoUrl = CHANGELOGO_URL %}
+		{% if not (logoUrl starts with 'http://' or logoUrl starts with 'https://') %}
+			{% set logoUrl = ROOT_PATH ~ CHANGELOGO_URL %}
+		{% endif %}
+	{% endif %}
 <style>
-    .site_logo {
-        background-image: url("{{ logoUrl }}");
-        width: {{ CHANGELOGO_WIDTH }};
-        height: {{ CHANGELOGO_HEIGHT }};
-        background-size: cover;
-    }
+	.site_logo {
+		{% if CHANGELOGO_URL %}background-image: url("{{ logoUrl }}");{% endif %}
+		{% if CHANGELOGO_WIDTH %}width: {{ CHANGELOGO_WIDTH }}px;{% endif %}
+		{% if CHANGELOGO_HEIGHT %}height: {{ CHANGELOGO_HEIGHT }}px;{% endif %}
+		background-size: contain;
+	}
 </style>
 {% endif %}

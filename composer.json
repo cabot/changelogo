@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Simple logo changer",
 	"homepage": "https://forum.cabotweb.fr",
-	"version": "1.0.0",
+	"version": "1.0.0-RC1",
 	"license": "GPL-2.0-only",
 	"authors": [{
 		"name": "cabot",
