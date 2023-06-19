@@ -36,7 +36,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'ACP_CHANGELOGO_HEADING'			=> 'Logo configuration',
 	'ACP_CHANGELOGO_URL'				=> 'Logo location',
-	'ACP_CHANGELOGO_URL_EXPLAIN'		=> 'You can use a remote image by entering its full URL (e.g. <code>https://something.com/logo_name.jpg</code>) or a local image by entering the relative path to the board root (e.g. <code>images/logo_name.svg</code>).',
+	'ACP_CHANGELOGO_URL_EXPLAIN'		=> 'You can use a remote image by entering its full URL (e.g., <code>https://something.com/logo_name.jpg</code>) or a local image by entering the relative path to the board root (e.g., <code>images/logo_name.svg</code>).',
 	'ACP_CHANGELOGO_WIDTH'				=> 'Logo width in pixels',
 	'ACP_CHANGELOGO_HEIGHT'				=> 'Logo height in pixels',
 	'ACP_CHANGELOGO_SAVE'				=> 'Logo configuration saved'
