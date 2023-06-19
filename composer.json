@@ -2,8 +2,8 @@
 	"name": "cabot/changelogo",
 	"type": "phpbb-extension",
 	"description": "Simple logo changer",
-	"homepage": "https://forum.cabotweb.fr",
-	"version": "1.0.0-RC1",
+	"homepage": "https://github.com/cabot/changelogo",
+	"version": "1.0.1",
 	"license": "GPL-2.0-only",
 	"authors": [{
 		"name": "cabot",
