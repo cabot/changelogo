@@ -6,7 +6,7 @@
  * @copyright (c) 2023 - cabot
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
-*/
+ */
 
 
 if (!defined('IN_PHPBB'))
@@ -36,4 +36,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'ACP_CHANGELOGO'		=> 'Logo',
 	'ACP_CHANGELOGO_CONF'	=> 'Configuration du logo',
+
+	// ACP Logs
+	'LOG_CHANGELOGO_UPDATED'	=> '<strong>Configuration du logo mise à jour</strong>',
 ]);

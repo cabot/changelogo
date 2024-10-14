@@ -6,8 +6,7 @@
  * @copyright (c) 2023 - cabot
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
-*/
-
+ */
 
 if (!defined('IN_PHPBB'))
 {
@@ -36,8 +35,16 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'ACP_CHANGELOGO_HEADING'			=> 'Logo configuration',
 	'ACP_CHANGELOGO_URL'				=> 'Logo location',
-	'ACP_CHANGELOGO_URL_EXPLAIN'		=> 'You can use a remote image by entering its full URL (e.g., <code>https://something.com/logo_name.jpg</code>) or a local image by entering the relative path to the board root (e.g., <code>images/logo_name.svg</code>).',
+	'ACP_CHANGELOGO_URL_EXPLAIN'		=> 'You can use a remote image by entering its full URL (e.g., <code>https://domain.com/logo_name.jpg</code>) or a local image by entering the relative path to the board root (e.g. <code>images/logo_name.svg</code>).',
 	'ACP_CHANGELOGO_WIDTH'				=> 'Logo width in pixels',
 	'ACP_CHANGELOGO_HEIGHT'				=> 'Logo height in pixels',
-	'ACP_CHANGELOGO_SAVE'				=> 'Logo configuration saved'
+	'ACP_CHANGELOGO_SAVE'				=> 'Logo configuration saved',
+	'ACP_CHANGELOGO_UPLOAD'				=> 'Upload an image',
+	'ACP_CHANGELOGO_UPLOAD_EXPLAIN'		=> 'Select an image (%s).<br>The fields below should be filled in automatically.<br>Note that the dimensions of svg images cannot always be retrieved, in which case you will have to fill them in manually.<br>The image preview is limited to 300px x 100px and does not reflect the actual size of your logo if it is larger.',
+
+	'ACP_CHANGELOGO_DIR_NOT_EXISTS'		=> 'The <samp>%s</samp> directory doesn’t exist at the board root and can’t be created. Please create it manually.',
+	'ACP_CHANGELOGO_NO_EXTENSION'		=> 'The “Logo location” field does not contain a valid file path.',
+	'ACP_CHANGELOGO_NOT_UPLOADED'		=> 'No file has been uploaded.',
+	'ACP_CHANGELOGO_UPLOAD_ERROR'		=> 'There was an error uploading your file. Please try again. Check server logs if problem persists.',
+	'DISALLOWED_EXTENSION'				=> 'The extension <samp>%s</samp> is not allowed.',
 ]);

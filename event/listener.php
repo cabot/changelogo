@@ -6,32 +6,29 @@
  * @copyright (c) 2023 - cabot
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
-*/
+ */
 
 namespace cabot\changelogo\event;
 
-use phpbb\template\template;
 use phpbb\config\config;
+use phpbb\template\template;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
-* Event listener
-*
-*/
+ * Event listener
+ *
+ */
 class listener implements EventSubscriberInterface
 {
-	/** @var \phpbb\template\template */
+	protected $config;
 	protected $template;
 
-	/** @var \phpbb\config\config */
-	protected $config;
-
 	/**
-	* Constructor
-	*
-	* @param \phpbb\config\config				$config
-	* @param \phpbb\template\template			$template
-	*/
+	 * Constructor
+	 *
+	 * @param config	$config		Config object
+	 * @param template	$template	Template object
+	 */
 
 	public function __construct(config $config, template $template)
 	{
@@ -46,7 +43,7 @@ class listener implements EventSubscriberInterface
 		];
 	}
 
-	public function changelogo($event)
+	public function changelogo()
 	{
 		$this->template->assign_vars([
 			'CHANGELOGO_URL'			=> $this->config['changelogo_url'],

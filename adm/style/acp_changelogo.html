@@ -1,15 +1,32 @@
 {% INCLUDE 'overall_header.html' %}
+{% INCLUDEJS 'acp_changelogo.js' %}
 <h1>{{ lang('ACP_CHANGELOGO_HEADING') }}</h1>
-<form id="acp_board" method="post" action="{{ U_ACTION }}">
+<form id="acp_changelogo" method="post" action="{{ U_ACTION }}" enctype="multipart/form-data">
 	<fieldset>
 		<legend>{{ lang('ACP_GENERAL_CONFIGURATION') }}</legend>
+		<dl>
+			<dt>
+				<label for="changelogo_upload">{{ lang('ACP_CHANGELOGO_UPLOAD') ~ lang('COLON') }}</label><br>
+				<span>{{ CHANGELOGO_ACCEPT_EXT }}</span>
+			</dt>
+			<dd>
+				<input type="file" name="changelogo_upload" id="changelogo_upload" accept="{{ CHANGELOGO_ACCEPT_ATTR }}" data-preview="#changelogo_preview" data-path="#changelogo_url" data-width="#changelogo_width" data-height="#changelogo_height"><br>
+				{% if CHANGELOGO_URL %}
+					{% set logo_src = CHANGELOGO_URL %}
+					{% if not (logo_src starts with 'http://' or logo_src starts with 'https://') %}
+						{% set logo_src = ROOT_PATH ~ CHANGELOGO_URL %}
+					{% endif %}
+				{% endif %}
+				<img id="changelogo_preview" src="{{ logo_src }}" alt="" style="max-width: 300px; max-height: 100px; object-fit: contain;">
+			</dd>
+		</dl>
 		<dl>
 			<dt>
 				<label for="changelogo_url">{{ lang('ACP_CHANGELOGO_URL') ~ lang('COLON') }}</label><br>
 				<span>{{ lang('ACP_CHANGELOGO_URL_EXPLAIN') }}</span>
 			</dt>
 			<dd>
-				<input id="changelogo_url" name="changelogo_url" type="text" size="50" value="{{ CHANGELOGO_URL }}">
+				<input id="changelogo_url" name="changelogo_url" type="text" size="50" value="{{ CHANGELOGO_URL }}" required>
 			</dd>
 		</dl>
 		<dl>
@@ -17,7 +34,7 @@
 				<label for="changelogo_width">{{ lang('ACP_CHANGELOGO_WIDTH') ~ lang('COLON') }}</label>
 			</dt>
 			<dd>
-				<input id="changelogo_width" name="changelogo_width" type="text" size="20" placeholder="149" value="{{ CHANGELOGO_WIDTH }}">px
+				<input id="changelogo_width" name="changelogo_width" type="number" placeholder="149" value="{{ CHANGELOGO_WIDTH }}">
 			</dd>
 		</dl>
 		<dl>
@@ -25,14 +42,18 @@
 				<label for="changelogo_height">{{ lang('ACP_CHANGELOGO_HEIGHT') ~ lang('COLON') }}</label>
 			</dt>
 			<dd>
-				<input id="changelogo_height" name="changelogo_height" type="text" size="20" placeholder="52" value="{{ CHANGELOGO_HEIGHT }}">px
+				<input id="changelogo_height" name="changelogo_height" type="number" placeholder="52" value="{{ CHANGELOGO_HEIGHT }}">
 			</dd>
 		</dl>
 	</fieldset>
+	<script>
+		const rootPath = '{{ ROOT_PATH }}';
+		const logoDestination = "{{ CHANGELOGO_DEST }}";
+	</script>
 	<p class="submit-buttons">
 		{{ S_FORM_TOKEN }}
-		<input class="button1" type="submit" name="submit" value="{{ lang('SUBMIT') }}">&nbsp;
-		<input class="button2" type="reset" name="reset" value="{{ lang('RESET') }}">
+		<input class="button1" type="submit" name="submit" id="submit" value="{{ lang('SUBMIT') }}">&nbsp;
+		<input class="button2" type="reset" name="reset" id="reset" value="{{ lang('RESET') }}">
 	</p>
 </form>
 {% INCLUDE 'overall_footer.html' %}
