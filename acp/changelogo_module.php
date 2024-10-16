@@ -43,17 +43,6 @@ class changelogo_module
 			trigger_error($language->lang('FORM_INVALID') . adm_back_link($this->u_action), E_USER_WARNING);
 		}
 
-		// Check if directory exists, if not try to create it
-		if (!file_exists($logo_dir))
-		{
-			@mkdir($logo_dir, 0777);
-
-			if (!file_exists($logo_dir))
-			{
-				trigger_error(sprintf($language->lang('ACP_CHANGELOGO_DIR_NOT_EXISTS'), $destination), E_USER_WARNING);
-			}
-		}
-
 		if ($submit)
 		{
 			$upload_logo = $request->file('changelogo_upload');
@@ -61,6 +50,17 @@ class changelogo_module
 			// Check whether a file has been uploaded
 			if (!empty($upload_logo['name']))
 			{
+				// Check if directory exists, if not try to create it
+				if (!file_exists($logo_dir))
+				{
+					@mkdir($logo_dir, 0777);
+
+					if (!file_exists($logo_dir))
+					{
+						trigger_error(sprintf($language->lang('ACP_CHANGELOGO_DIR_NOT_EXISTS'), $destination), E_USER_WARNING);
+					}
+				}
+
 				$upload = $phpbb_container->get('files.factory')->get('upload')
 					->set_allowed_extensions($allowed_extensions);
 
