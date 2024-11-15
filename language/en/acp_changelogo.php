@@ -44,6 +44,7 @@ $lang = array_merge($lang, [
 
 	'ACP_CHANGELOGO_DIR_NOT_EXISTS'		=> 'The <samp>%s</samp> directory doesn’t exist at the board root and can’t be created. Please create it manually.',
 	'ACP_CHANGELOGO_NO_EXTENSION'		=> 'The “Logo location” field does not contain a valid file path.',
+	'ACP_CHANGELOGO_EMPTY_FIELD'		=> 'The “Logo location” field is empty. Please fill it in manually or check that JavaScript is enabled in your browser if you have used the file upload function.',
 	'ACP_CHANGELOGO_NOT_UPLOADED'		=> 'No file has been uploaded.',
 	'ACP_CHANGELOGO_UPLOAD_ERROR'		=> 'There was an error uploading your file. Please try again. Check server logs if problem persists.',
 	'DISALLOWED_EXTENSION'				=> 'The extension <samp>%s</samp> is not allowed.',
