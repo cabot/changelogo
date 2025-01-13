@@ -1,31 +1,35 @@
 # Change logo
 Simple logo changer for phpBB
 
-![phpBB 3.2.x Compatible](https://img.shields.io/badge/phpBB-3.2.x%20Compatible%20-blue.svg)
-
 ![phpBB 3.3.x Compatible](https://img.shields.io/badge/phpBB-3.3.x%20Compatible%20-blue.svg)
 
 ## Minimum Requirements
-* phpBB 3.2.0
-* PHP 5.4.7
+* phpBB 3.3
+* PHP 7.1
 
-## Install
-1. Download the latest release.
+## Install (easy)
+1. Download the latest ready-to-install version [cabot_changelogo.zip](https://github.com/cabot/changelogo/releases/latest/download/cabot_changelogo.zip).
+2. Unzip the downloaded archive and upload the folder it contains into the `ext/` directory of your phpBB board.
+3. Navigate in the ACP to `Customise -> Manage extensions`.
+4. Look for `Change Logo` under the Disabled Extensions list, and click its `Enable` link.
+
+## Install (advanced)
+1. Download the latest Source Code release.
 2. Unzip the downloaded release, and change the name of the folder to `changelogo`.
 3. In the `ext` directory of your phpBB board, create a new directory named `cabot` (if it does not already exist).
 4. Copy the `changelogo` folder to `/ext/cabot/` (if done correctly, you'll have the main extension class at (your forum root)/ext/cabot/changelogo/composer.json).
 5. Navigate in the ACP to `Customise -> Manage extensions`.
-6. Look for `Change logo` under the Disabled Extensions list, and click its `Enable` link.
+6. Look for `Change Logo` under the Disabled Extensions list, and click its `Enable` link.
 
 ## Uninstall
 1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
-2. Look for `Change logo` under the Enabled Extensions list, and click its `Disable` link.
-3. To permanently uninstall, click `Delete Data` and then delete the `/ext/cabot/changelogo` folder.
+2. Look for `Change Logo` under the Enabled Extensions list, and click its `Disable` link.
+3. To permanently uninstall, click `Delete data` and then delete the `/ext/cabot/changelogo` folder.
 
 ## Management
-1. Navigate in the ACP to `Extensions -> Logo configuration`.
+1. Navigate in the ACP to `Extensions -> Logo settings`.
 
 ## License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
-© 2023 - cabot
+© 2023-2025 - cabot

@@ -1,0 +1,7 @@
+.changelogo-preview {
+	max-width: 300px;
+	max-height: 100px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}

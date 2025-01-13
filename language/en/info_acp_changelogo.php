@@ -3,7 +3,7 @@
  *
  * Simple logo changer for the phpBB Forum Software package.
  *
- * @copyright (c) 2023 - cabot
+ * @copyright (c) 2023-2025 - cabot
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
  */
@@ -17,6 +17,7 @@ if (empty($lang) || !is_array($lang))
 {
 	$lang = [];
 }
+
 // DEVELOPERS PLEASE NOTE
 //
 // All language files should use UTF-8 as their encoding and the files must not contain a BOM.
@@ -32,10 +33,10 @@ if (empty($lang) || !is_array($lang))
 // Some characters you may want to copy&paste:
 // ’ » “ ” …
 //
+
 $lang = array_merge($lang, [
 	'ACP_CHANGELOGO'		=> 'Logo',
-	'ACP_CHANGELOGO_CONF'	=> 'Logo configuration',
+	'ACP_CHANGELOGO_CONF'	=> 'Logo settings',
 
-	// ACP Logs
-	'LOG_CHANGELOGO_UPDATED'	=> '<strong>Logo configuration updated</strong>',
+	'LOG_ACP_CHANGELOGO_SETTINGS'		=> '<strong>Change Logo settings updated</strong>',
 ]);

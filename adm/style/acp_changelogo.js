@@ -1,4 +1,12 @@
-// Validate and build URL
+/**
+ * Validates and constructs a valid URL.
+ *
+ * If the provided URL does not start with "http://" or "https://", the `rootPath` is prepended to it.
+ * Empty or whitespace-only URLs will return an empty string.
+ *
+ * @param {string} inputUrl - The URL provided by the user, which may need validation or modification.
+ * @returns {string} A valid, fully constructed URL or an empty string if the input is invalid.
+ */
 function getValidUrl(inputUrl) {
 	let url = inputUrl.trim();
 	if (!url) return '';
@@ -9,7 +17,14 @@ function getValidUrl(inputUrl) {
 	return url;
 }
 
-// Update image preview and dimensions
+/**
+ * Updates the preview image and sets the width and height input values based on the image's dimensions.
+ *
+ * @param {string} url - The URL of the image to preview.
+ * @param {HTMLElement|string} previewElement - The element or selector where the preview image will be displayed.
+ * @param {HTMLElement|string} widthInput - The input element or selector where the image width will be set.
+ * @param {HTMLElement|string} heightInput - The input element or selector where the image height will be set.
+ */
 function updatePreview(url, previewElement, widthInput, heightInput) {
 	const newImg = new Image();
 	newImg.src = url;

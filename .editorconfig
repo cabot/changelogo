@@ -1,0 +1,19 @@
+# This file is for standardising the coding style between different editors
+# http://editorconfig.org/
+
+root = true
+
+[*]
+end_of_line = lf
+indent_size = 4
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{json,yml}]
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = false

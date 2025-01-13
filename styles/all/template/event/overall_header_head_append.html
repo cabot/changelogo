@@ -1,0 +1,10 @@
+{% if CHANGELOGO_URL || CHANGELOGO_WIDTH || CHANGELOGO_HEIGHT %}
+<style>
+.site_logo {
+	{{ CHANGELOGO_URL ? 'background-image: url("' ~ CHANGELOGO_URL ~ '");' }}
+	{{ CHANGELOGO_WIDTH ? 'width: ' ~ CHANGELOGO_WIDTH ~ 'px;' }}
+	{{ CHANGELOGO_HEIGHT ? 'height: ' ~ CHANGELOGO_HEIGHT ~ 'px;' }}
+	background-size: contain;
+}
+</style>
+{% endif %}

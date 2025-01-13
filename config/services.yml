@@ -1,8 +1,34 @@
 services:
+    cabot.changelogo.logo_path_helper:
+        class: cabot\changelogo\helper\logo_path_helper
+        arguments:
+            - '@path_helper'
+
     cabot.changelogo.listener:
-        class: cabot\changelogo\event\listener
+        class: cabot\changelogo\event\main_listener
         arguments:
             - '@config'
             - '@template'
+            - '@cabot.changelogo.logo_path_helper'
         tags:
             - { name: event.listener }
+
+    cabot.changelogo.upload_service:
+        class: cabot\changelogo\service\upload_service
+        arguments:
+            - '@config'
+            - '@files.factory'
+            - '@language'
+
+    cabot.changelogo.controller.acp:
+        class: cabot\changelogo\controller\acp_controller
+        arguments:
+            - '@config'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '@cabot.changelogo.upload_service'
+            - '@cabot.changelogo.logo_path_helper'
+            - '%core.root_path%'
