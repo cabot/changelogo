@@ -40,13 +40,14 @@ class upload_service
 
 	/**
 	 * Handles the logo upload process
-	*
-	* @param string		$destination			Relative destination directory (e.g., 'images/changelogo')
-	* @param string		$logo_dir				Absolute path to the destination directory
-	* @param array		$allowed_extensions		List of allowed file extensions
-	* @return array		Contains 'errors' (array) and 'file_url' (string|null)
-	*/
-	public function logo_upload(string $destination, string $logo_dir, array $allowed_extensions)
+	 *
+	 * @param string	$destination			Relative destination directory (e.g., 'images/changelogo')
+	 * @param string	$logo_dir				Absolute path to the destination directory
+	 * @param array		$allowed_extensions		List of allowed file extensions
+	 * @param string	$upload_field_name		Name of the upload field in the form (e.g., 'file_upload')
+	 * @return array	Contains 'errors' (array) and 'file_url' (string|null)
+	 */
+	public function logo_upload(string $destination, string $logo_dir, array $allowed_extensions, string $upload_field_name)
 	{
 		$errors = [];
 		$file_url = null;
@@ -68,7 +69,7 @@ class upload_service
 			->set_allowed_extensions($allowed_extensions)
 			->set_disallowed_content((isset($this->config['mime_triggers']) ? explode('|', $this->config['mime_triggers']) : false));
 
-		$file = $upload->handle_upload('files.types.form', 'changelogo_upload');
+		$file = $upload->handle_upload('files.types.form', $upload_field_name);
 
 		if (count($file->error))
 		{

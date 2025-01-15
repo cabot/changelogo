@@ -11,7 +11,7 @@
 	</div>
 {% endif %}
 
-<form id="{{ FORM_KEY }}" name="{{ FORM_KEY }}" method="post" action="{{ U_ACTION }}" enctype="multipart/form-data">
+<form id="changelogo_acp" name="{{ FORM_NAME }}" method="post" action="{{ U_ACTION }}" enctype="multipart/form-data">
 	<fieldset>
 		<legend>{{ lang('ACP_GENERAL_CONFIGURATION') }}</legend>
 		<dl>
@@ -20,7 +20,7 @@
 				<span>{{ CHANGELOGO_ACCEPT_EXT }}</span>
 			</dt>
 			<dd>
-				<input type="file" name="changelogo_upload" id="changelogo_upload" accept="{{ CHANGELOGO_ACCEPT_ATTR }}">
+				<input type="file" name="{{ INPUT_FILE_NAME }}" id="changelogo_upload" accept="{{ CHANGELOGO_ACCEPT_ATTR }}">
 				<div>
 					<img id="changelogo_preview" class="changelogo-preview" src="{{ CHANGELOGO_SRC }}" alt="" width="300" height="100">
 				</div>

@@ -82,9 +82,10 @@ class acp_controller
 
 		$form_key = 'changelogo_acp';
 
-		$allowed_extensions = ['apng', 'avif', 'gif', 'jpeg', 'jpg', 'png', 'svg', 'webp'];
 		$destination = 'images/changelogo';
 		$logo_dir = $this->root_path . $destination;
+		$allowed_extensions = ['apng', 'avif', 'gif', 'jpeg', 'jpg', 'png', 'svg', 'webp'];
+		$upload_field_name = 'changelogo_upload';
 
 		$extensions_accept = implode(', ', array_map(function ($ext) {
 			return '.' . $ext;
@@ -101,12 +102,12 @@ class acp_controller
 				$errors[] = $this->language->lang('FORM_INVALID');
 			}
 
-			$upload_logo = $this->request->file('changelogo_upload');
+			$upload_logo = $this->request->file($upload_field_name);
 			$changelogo_url = $this->request->variable('changelogo_url', '');
 
 			if (!empty($upload_logo['name']))
 			{
-				$result = $this->upload_service->logo_upload($destination, $logo_dir, $allowed_extensions);
+				$result = $this->upload_service->logo_upload($destination, $logo_dir, $allowed_extensions, $upload_field_name);
 
 				if (!empty($result['errors']))
 				{
@@ -165,7 +166,8 @@ class acp_controller
 			'S_ERROR'					=> $has_errors,
 			'ERROR_MSG'					=> $has_errors ? implode('<br>', $errors) : '',
 			'U_ACTION'					=> $this->u_action,
-			'FORM_KEY'					=> $form_key,
+			'FORM_NAME'					=> $form_key,
+			'INPUT_FILE_NAME'			=> $upload_field_name,
 			'CHANGELOGO_URL'			=> $this->config['changelogo_url'],
 			'CHANGELOGO_SRC'			=> $this->logo_path_helper->get_logo_path($this->config['changelogo_url']),
 			'CHANGELOGO_WIDTH'			=> $this->config['changelogo_width'],
